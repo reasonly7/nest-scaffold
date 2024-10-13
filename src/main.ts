@@ -9,6 +9,7 @@ async function bootstrap() {
   useGlobalPipes(app);
   useSwaggerModule(app);
   const configService = app.get(ConfigService);
+  app.setGlobalPrefix(configService.get('app.globalPrefix'));
   await app.listen(configService.get<number>('app.port'));
 }
 bootstrap();

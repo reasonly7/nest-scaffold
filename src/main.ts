@@ -6,10 +6,11 @@ import { useGlobalPipes } from './pipes/useGlobalPipes';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  useGlobalPipes(app);
-  useSwaggerModule(app);
   const configService = app.get(ConfigService);
   app.setGlobalPrefix(configService.get('app.globalPrefix'));
+
+  useGlobalPipes(app);
+  useSwaggerModule(app);
   await app.listen(configService.get<number>('app.port'));
 }
 bootstrap();

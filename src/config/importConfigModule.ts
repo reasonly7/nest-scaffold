@@ -3,6 +3,8 @@ import * as path from 'path';
 import databaseConfig from './database.config';
 import appConfig from './app.config';
 import swaggerConfig from './swagger.config';
+import cacheConfig from './cache.config';
+import rsaConfig from './rsa.config';
 
 export const importConfigModule = () => {
   return ConfigModule.forRoot({
@@ -13,6 +15,6 @@ export const importConfigModule = () => {
       path.resolve(__dirname, `../../.env.${process.env.NODE_ENV}`),
       path.resolve(__dirname, '../../.env'),
     ],
-    load: [appConfig, databaseConfig, swaggerConfig],
+    load: [appConfig, databaseConfig, swaggerConfig, cacheConfig, rsaConfig],
   });
 };

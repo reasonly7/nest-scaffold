@@ -4,6 +4,7 @@ import { UserModule } from './user/user.module';
 import { importTypeOrmModule } from './typeorm/importTypeOrmModule';
 import { importCacheModule } from './cache/importCacheModule';
 import { CaptchaModule } from './captcha/captcha.module';
+import { RsaModule } from './rsa/rsa.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { CaptchaModule } from './captcha/captcha.module';
     importCacheModule(),
     CaptchaModule,
     UserModule,
+    RsaModule,
   ],
   controllers: [],
   providers: [],

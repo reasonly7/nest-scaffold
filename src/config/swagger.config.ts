@@ -5,6 +5,6 @@ export default registerAs('swagger', () => {
     title: process.env.SWAGGER_TITLE || 'Swagger Title',
     description: process.env.SWAGGER_DESCRIPTION || 'Swagger Description',
     version: process.env.SWAGGER_VERSION || 'v0.0.1',
-    path: process.env.SWAGGER_PATH || 'api',
+    path: process.env.SWAGGER_PATH || 'docs',
   };
 });
